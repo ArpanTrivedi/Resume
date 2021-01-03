@@ -1,0 +1,146 @@
+<div class="container">
+  <div class="row mt-5 mb-3">
+    <div class="col col-6 offset-3">
+      <div class="card border-dark mb-2">
+        <div class="card-header bg-dark text-center text-info text-uppercase">
+          Contact us
+        </div>
+
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <!-- <div>
+              <div class="text-center">
+                <label for="imagepicker" class="">
+                  <img [src]="picture" width="40" height="40" alt="" class="profile" />
+                </label>
+
+                <input
+                  type="file"
+                  name="image"
+                  id="imagepicker"
+                  accept="image/*"
+                  multiple="{false}"
+                  class="hidden"
+                  hidden
+                  (change)="uploadFile($event)"
+                />
+              </div>
+
+              <div
+              class="text-white text-center"
+              [hidden]="!uploadPercent || uploadPercent==100"
+              >
+              uploading
+              {{uploadPercent}} % of 100%
+             </div>
+              <div
+                *ngIf="uploadPercent == 100"
+                class="text-success text-uppercase text-center mb-3">
+                Upload finished
+              </div>
+            </div> -->
+
+            <div class="form-group row">
+              <label for="firstname" class="col-sm-3 col-form-label">First Name<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <input
+                  type="firstname"
+                  class="form-control"
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Enter first name"
+                  required
+                  ngModel
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="lastname" class="col-sm-3 col-form-label">Last Name<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <input
+                  type="lastname"
+                  class="form-control"
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Enter last name"
+                  required
+                  ngModel
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Email<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter Email"
+                  required
+                  ngModel
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="phonenumber" class="col-sm-3 col-form-label">Phone No.<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="phonenumber"
+                  name="phonenumber"
+                  placeholder="Enter phonenumber"
+                  required
+                  ngModel
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >phone number must be <span class="text-danger">valid</span></small
+                >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="address" class="col-sm-3 col-form-label">Address<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  placeholder="Enter your full address"
+                  required
+                  ngModel
+                ></textarea>
+                <small class="text-dark"><span class="text-danger">*</span> are required field</small>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="Resume" class="col-sm-3 col-form-label">Resume<span class="text-danger">*</span></label>
+              <div class="col-sm-9">
+                <input
+                  type="file"
+                  name="image"
+                  multiple="{false}"
+                  class="form-control"
+                  (change)="uploadFile($event)"
+                />
+              </div>
+            </div>
+
+
+            <div class="text-center">
+              <button [disabled]="!f.form.valid" class="btn btn-primary" type="submit">
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

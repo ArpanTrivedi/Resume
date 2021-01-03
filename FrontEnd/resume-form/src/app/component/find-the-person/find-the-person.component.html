@@ -1,0 +1,24 @@
+
+<div class="container text-center">
+  <div *ngIf="array.length <= 0" class="container">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter the name">
+      <div class="input-group-append">
+        <button class="btn btn-success" (click)="submit()" type="submit">Search</button>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let a of array" class="mb-3">
+    <div class="card" style="width:400px">
+      <div class="card-body">
+        <h4 class="card-title">Name: {{a.firstname}} {{a.lastname}}</h4>
+        <p class="card-text "><fa-icon [icon]="faEnvelopeOpen"></fa-icon> {{a.email}} </p>
+        <p class="card-text"><fa-icon [icon]="faPhone"></fa-icon>  {{a.phonenumber}} </p>
+        <p class="card-text"><fa-icon [icon]="faMapMarkedAlt"></fa-icon>  {{a.address}}</p>
+        <a (click)="onClick(a._id)" class="btn btn-danger btn-block">Delete Profile</a>
+        <hr/>
+        <a (click)="onClickUpdate(a._id)" class="btn btn-info btn-block">Update Profile</a>
+      </div>
+    </div>
+  </div>
+</div>
